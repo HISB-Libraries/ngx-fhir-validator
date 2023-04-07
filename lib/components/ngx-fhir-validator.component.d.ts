@@ -19,6 +19,7 @@ export declare class NgxFhirValidatorComponent {
     validationInputFormat: ValidatorInput;
     maxFileSize: number;
     submitBtnAlignment: SubmitButtonAlignment;
+    cancelValidationBtnShown: boolean;
     onValidation: EventEmitter<ValidationResults>;
     onApiError: EventEmitter<any>;
     onResourceContentChanged: EventEmitter<any>;
@@ -67,5 +68,5 @@ export declare class NgxFhirValidatorComponent {
     clearValidationErrors(): void;
     getLineItemClass(item: string, i: number): "" | "error-mark" | "warning-mark" | "info-mark" | "note-mark";
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxFhirValidatorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NgxFhirValidatorComponent, "lib-ngx-fhir-validator", never, { "validatorTitle": "validatorTitle"; "validationResultsExpanded": "validationResultsExpanded"; "resultDetailsExpandBtnShown": "resultDetailsExpandBtnShown"; "formatResourceBtnShown": "formatResourceBtnShown"; "clearValidatorBtnShown": "clearValidatorBtnShown"; "submitBtnShown": "submitBtnShown"; "submitBtnTitle": "submitBtnTitle"; "validationInputFormat": "validationInputFormat"; "maxFileSize": "maxFileSize"; "submitBtnAlignment": "submitBtnAlignment"; }, { "onValidation": "onValidation"; "onApiError": "onApiError"; "onResourceContentChanged": "onResourceContentChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NgxFhirValidatorComponent, "lib-ngx-fhir-validator", never, { "validatorTitle": "validatorTitle"; "validationResultsExpanded": "validationResultsExpanded"; "resultDetailsExpandBtnShown": "resultDetailsExpandBtnShown"; "formatResourceBtnShown": "formatResourceBtnShown"; "clearValidatorBtnShown": "clearValidatorBtnShown"; "submitBtnShown": "submitBtnShown"; "submitBtnTitle": "submitBtnTitle"; "validationInputFormat": "validationInputFormat"; "maxFileSize": "maxFileSize"; "submitBtnAlignment": "submitBtnAlignment"; "cancelValidationBtnShown": "cancelValidationBtnShown"; }, { "onValidation": "onValidation"; "onApiError": "onApiError"; "onResourceContentChanged": "onResourceContentChanged"; }, never, never, false, never>;
 }
