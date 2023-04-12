@@ -1,12 +1,14 @@
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { EnvironmentHandlerService } from "../environment-handler.service";
 import * as i0 from "@angular/core";
 export declare class FhirValidatorService {
     private http;
     private _snackBar;
-    private prodUri;
-    constructor(http: HttpClient, _snackBar: MatSnackBar);
+    private environmentHandler;
+    private readonly serverBaseUrl;
+    constructor(http: HttpClient, _snackBar: MatSnackBar, environmentHandler: EnvironmentHandlerService);
     showErrorMessage(messageStr?: string): void;
     showSuccessMessage(messageStr: string): void;
     closeNotification(): void;

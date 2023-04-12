@@ -1,3 +1,4 @@
+import { ModuleWithProviders } from '@angular/core';
 import * as i0 from "@angular/core";
 import * as i1 from "./components/ngx-fhir-validator.component";
 import * as i2 from "@angular/common";
@@ -25,6 +26,7 @@ import * as i23 from "@angular/material/checkbox";
 import * as i24 from "@angular/material/tooltip";
 import * as i25 from "@angular/material/divider";
 export declare class NgxFhirValidatorModule {
+    static forRoot(serverBaseUrl: string): ModuleWithProviders<any>;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxFhirValidatorModule, never>;
     static ɵmod: i0.ɵɵNgModuleDeclaration<NgxFhirValidatorModule, [typeof i1.NgxFhirValidatorComponent], [typeof i2.CommonModule, typeof i3.BrowserModule, typeof i4.BrowserAnimationsModule, typeof i5.MatFormFieldModule, typeof i6.MatInputModule, typeof i7.MatButtonModule, typeof i8.ReactiveFormsModule, typeof i9.MatIconModule, typeof i10.MatSidenavModule, typeof i11.MatToolbarModule, typeof i12.MatTableModule, typeof i13.MatPaginatorModule, typeof i14.MatProgressSpinnerModule, typeof i15.MatSortModule, typeof i16.HttpClientModule, typeof i17.MatRadioModule, typeof i8.FormsModule, typeof i18.MatCardModule, typeof i19.MatSnackBarModule, typeof i20.MatSelectModule, typeof i21.MatButtonToggleModule, typeof i22.MatChipsModule, typeof i23.MatCheckboxModule, typeof i24.MatTooltipModule, typeof i25.MatDividerModule], [typeof i1.NgxFhirValidatorComponent]>;
     static ɵinj: i0.ɵɵInjectorDeclaration<NgxFhirValidatorModule>;
