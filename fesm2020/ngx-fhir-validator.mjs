@@ -265,7 +265,7 @@ class NgxFhirValidatorComponent {
         this.submitBtnShown = true; // Show/hide Submit btn
         this.submitBtnTitle = 'Submit'; //The submit button title. "Submit" is generic name and other apps may want to change it
         this.validationInputFormat = { format: 'json', accepts: '.json' };
-        this.maxFileSize = 100000; // Max allowed file size is 100KB
+        this.maxFileSize = 250000; // Max allowed file size is 100KB
         this.submitBtnAlignment = 'right'; // The default location for the Submit btn
         this.cancelValidationBtnShown = true;
         this.buttonTxtColor = 'white';
