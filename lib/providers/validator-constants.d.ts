@@ -7,6 +7,7 @@ export declare class ValidatorConstants {
     static PROD_URI: string;
     static DISPLAYED_COLUMNS: string[];
     static SEVERITY_LEVELS: string[];
+    static FONT_WIDTH: number;
     static ɵfac: i0.ɵɵFactoryDeclaration<ValidatorConstants, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<ValidatorConstants>;
 }
