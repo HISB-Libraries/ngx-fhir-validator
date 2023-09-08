@@ -15,6 +15,7 @@ export declare class NgxFhirValidatorComponent {
     formatResourceBtnShown: boolean;
     clearValidatorBtnShown: boolean;
     submitBtnShown: boolean;
+    exportToPdfButtonShown: boolean;
     submitBtnTitle: string;
     validationInputFormat: ValidatorInput;
     maxFileSize: number;
@@ -25,6 +26,7 @@ export declare class NgxFhirValidatorComponent {
     onValidation: EventEmitter<ValidationResults>;
     onApiError: EventEmitter<any>;
     onResourceContentChanged: EventEmitter<any>;
+    onExportToPdfEvent: EventEmitter<any>;
     inputRef: any;
     apiResponse: ApiResponse | null;
     fhirResource: string;
@@ -77,6 +79,7 @@ export declare class NgxFhirValidatorComponent {
     getFormat(): string;
     protected readonly Array: ArrayConstructor;
     protected readonly console: Console;
+    onExportToPdf(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxFhirValidatorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NgxFhirValidatorComponent, "lib-ngx-fhir-validator", never, { "validatorTitle": "validatorTitle"; "validationResultsExpanded": "validationResultsExpanded"; "resultDetailsExpandBtnShown": "resultDetailsExpandBtnShown"; "formatResourceBtnShown": "formatResourceBtnShown"; "clearValidatorBtnShown": "clearValidatorBtnShown"; "submitBtnShown": "submitBtnShown"; "submitBtnTitle": "submitBtnTitle"; "validationInputFormat": "validationInputFormat"; "maxFileSize": "maxFileSize"; "submitBtnAlignment": "submitBtnAlignment"; "cancelValidationBtnShown": "cancelValidationBtnShown"; "buttonTxtColor": "buttonTxtColor"; "buttonBackgroundColor": "buttonBackgroundColor"; }, { "onValidation": "onValidation"; "onApiError": "onApiError"; "onResourceContentChanged": "onResourceContentChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NgxFhirValidatorComponent, "lib-ngx-fhir-validator", never, { "validatorTitle": "validatorTitle"; "validationResultsExpanded": "validationResultsExpanded"; "resultDetailsExpandBtnShown": "resultDetailsExpandBtnShown"; "formatResourceBtnShown": "formatResourceBtnShown"; "clearValidatorBtnShown": "clearValidatorBtnShown"; "submitBtnShown": "submitBtnShown"; "exportToPdfButtonShown": "exportToPdfButtonShown"; "submitBtnTitle": "submitBtnTitle"; "validationInputFormat": "validationInputFormat"; "maxFileSize": "maxFileSize"; "submitBtnAlignment": "submitBtnAlignment"; "cancelValidationBtnShown": "cancelValidationBtnShown"; "buttonTxtColor": "buttonTxtColor"; "buttonBackgroundColor": "buttonBackgroundColor"; }, { "onValidation": "onValidation"; "onApiError": "onApiError"; "onResourceContentChanged": "onResourceContentChanged"; "onExportToPdfEvent": "onExportToPdfEvent"; }, never, never, false, never>;
 }
