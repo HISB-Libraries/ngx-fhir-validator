@@ -5,6 +5,7 @@ import { FhirValidatorService } from "../services/fhir-validator.service";
 import { ValidationResults } from "../modal/validation-results";
 import { ApiResponse } from "../modal/api-response";
 import { ValidatorInput } from "../modal/validator-input-format";
+import 'jspdf-autotable';
 import * as i0 from "@angular/core";
 export type SubmitButtonAlignment = 'left' | 'right';
 export declare class NgxFhirValidatorComponent {

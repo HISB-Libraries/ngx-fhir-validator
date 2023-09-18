@@ -6,8 +6,8 @@ import * as i6 from '@angular/material/table';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import * as JSZip from 'jszip';
-import * as autoTable from 'jspdf-autotable';
-import * as jspdf from 'jspdf';
+import { jsPDF } from 'jspdf';
+import 'jspdf-autotable';
 import * as i1 from '@angular/common/http';
 import { HttpHeaders, HttpClientModule } from '@angular/common/http';
 import { map } from 'rxjs';
@@ -616,7 +616,7 @@ class NgxFhirValidatorComponent {
             return '';
     }
     generateAutoTablePDF(data) {
-        let pdf = new jspdf.jsPDF();
+        let pdf = new jsPDF();
         const reportTitle = "FHIR Validator Results";
         pdf.setFontSize(6);
         pdf.setTextColor(119, 119, 119);
@@ -624,7 +624,7 @@ class NgxFhirValidatorComponent {
         pdf.setFontSize(12);
         pdf.setTextColor(50, 50, 50);
         pdf.text(reportTitle, 14, 12);
-        autoTable.default(pdf, {
+        pdf.autoTable({
             columnStyles: {
                 severity: { halign: 'left', cellWidth: 25 },
                 fhirPath: { halign: 'left', cellWidth: 50 },
