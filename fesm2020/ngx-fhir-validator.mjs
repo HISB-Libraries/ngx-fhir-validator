@@ -643,17 +643,16 @@ class NgxFhirValidatorComponent {
         return new Blob([pdf.output('blob')], { type: 'application/pdf' });
     }
     onExportToPdf() {
-        // Add the formatted resource form the validator response to a json file
-        // This way the line numbers from the validator report will match the json file numbers
-        const jsonResource = this?.apiResponse?.formattedResource || '';
-        let zip = new JSZip();
-        zip.file(`resource.json`, jsonResource);
         // Create a pdf report
         const pdfReportData = this.dataSource.data
             .map(element => { return { severity: element.severity, diagnostics: element.diagnostics, location: element.location, fhirPath: element?.expression?.[0] }; })
             .filter(item => this.severityLevelsFormControl.value.indexOf(item.severity) != -1);
         const pdfBlob = this.generateAutoTablePDF(pdfReportData);
-        zip.file('fhir_validator_report.pdf', pdfBlob);
+        // Add the formatted resource form the validator response to a json file
+        // This way the line numbers from the validator report will match the json file numbers
+        const jsonResource = this?.apiResponse?.formattedResource || '';
+        let zip = new JSZip();
+        zip.file(`resource.json`, jsonResource);
         // Create the zip and trigger download
         zip.generateAsync({ type: 'blob' }).then((content) => {
             // Create a blob for the zip content
