@@ -5,7 +5,6 @@ import { FhirValidatorService } from "../services/fhir-validator.service";
 import { ValidationResults } from "../modal/validation-results";
 import { ApiResponse } from "../modal/api-response";
 import { ValidatorInput } from "../modal/validator-input-format";
-import 'jspdf-autotable';
 import * as i0 from "@angular/core";
 export type SubmitButtonAlignment = 'left' | 'right';
 export declare class NgxFhirValidatorComponent {
@@ -24,9 +23,12 @@ export declare class NgxFhirValidatorComponent {
     cancelValidationBtnShown: boolean;
     buttonTxtColor: string;
     buttonBackgroundColor: string;
+    exportValidationResultsBtnVisible: boolean;
+    exportValidationResultsBtnName: string;
     onValidation: EventEmitter<ValidationResults>;
     onApiError: EventEmitter<any>;
     onResourceContentChanged: EventEmitter<any>;
+    onExportValidationResults: EventEmitter<any>;
     inputRef: any;
     apiResponse: ApiResponse | null;
     fhirResource: string;
@@ -76,21 +78,7 @@ export declare class NgxFhirValidatorComponent {
     private setValidatorResponse;
     clearValidationErrors(): void;
     getLineItemClass(item: string, i: number): "" | "error-mark" | "warning-mark" | "info-mark" | "note-mark";
-    generateAutoTablePDF(data: any): Blob;
-    onExportToPdf(): void;
-    /**
-     * Helper function for formatting a date.
-     * For more information see https://trymysolution.medium.com/javascript-date-as-in-yyyy-mm-dd-hh-mm-ss-format-or-mm-dd-yyyy-hh-mm-ss-a0c96e8fa888
-     * @param date
-     * @param dateDiveder
-     */
-    private toInYyyyMmDdHhMmSs;
-    /**
-     * Helper function for toInYyyyMmDdHhMmSs function
-     * @param num
-     * @private
-     */
-    private padTwoDigits;
+    exportValidationResults(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxFhirValidatorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NgxFhirValidatorComponent, "lib-ngx-fhir-validator", never, { "validatorTitle": "validatorTitle"; "validationResultsExpanded": "validationResultsExpanded"; "resultDetailsExpandBtnShown": "resultDetailsExpandBtnShown"; "formatResourceBtnShown": "formatResourceBtnShown"; "clearValidatorBtnShown": "clearValidatorBtnShown"; "submitBtnShown": "submitBtnShown"; "exportResultsButtonShown": "exportResultsButtonShown"; "submitBtnTitle": "submitBtnTitle"; "validationInputFormat": "validationInputFormat"; "maxFileSize": "maxFileSize"; "submitBtnAlignment": "submitBtnAlignment"; "cancelValidationBtnShown": "cancelValidationBtnShown"; "buttonTxtColor": "buttonTxtColor"; "buttonBackgroundColor": "buttonBackgroundColor"; }, { "onValidation": "onValidation"; "onApiError": "onApiError"; "onResourceContentChanged": "onResourceContentChanged"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NgxFhirValidatorComponent, "lib-ngx-fhir-validator", never, { "validatorTitle": "validatorTitle"; "validationResultsExpanded": "validationResultsExpanded"; "resultDetailsExpandBtnShown": "resultDetailsExpandBtnShown"; "formatResourceBtnShown": "formatResourceBtnShown"; "clearValidatorBtnShown": "clearValidatorBtnShown"; "submitBtnShown": "submitBtnShown"; "exportResultsButtonShown": "exportResultsButtonShown"; "submitBtnTitle": "submitBtnTitle"; "validationInputFormat": "validationInputFormat"; "maxFileSize": "maxFileSize"; "submitBtnAlignment": "submitBtnAlignment"; "cancelValidationBtnShown": "cancelValidationBtnShown"; "buttonTxtColor": "buttonTxtColor"; "buttonBackgroundColor": "buttonBackgroundColor"; "exportValidationResultsBtnVisible": "exportValidationResultsBtnVisible"; "exportValidationResultsBtnName": "exportValidationResultsBtnName"; }, { "onValidation": "onValidation"; "onApiError": "onApiError"; "onResourceContentChanged": "onResourceContentChanged"; "onExportValidationResults": "onExportValidationResults"; }, never, never, false, never>;
 }
