@@ -15,7 +15,7 @@ export declare class NgxFhirValidatorComponent {
     formatResourceBtnShown: boolean;
     clearValidatorBtnShown: boolean;
     submitBtnShown: boolean;
-    exportToPdfButtonShown: boolean;
+    exportResultsButtonShown: boolean;
     submitBtnTitle: string;
     validationInputFormat: ValidatorInput;
     maxFileSize: number;
@@ -23,10 +23,12 @@ export declare class NgxFhirValidatorComponent {
     cancelValidationBtnShown: boolean;
     buttonTxtColor: string;
     buttonBackgroundColor: string;
+    exportValidationResultsBtnVisible: boolean;
+    exportValidationResultsBtnName: string;
     onValidation: EventEmitter<ValidationResults>;
     onApiError: EventEmitter<any>;
     onResourceContentChanged: EventEmitter<any>;
-    onExportToPdfEvent: EventEmitter<any>;
+    onExportValidationResults: EventEmitter<any>;
     inputRef: any;
     apiResponse: ApiResponse | null;
     fhirResource: string;
@@ -76,10 +78,7 @@ export declare class NgxFhirValidatorComponent {
     private setValidatorResponse;
     clearValidationErrors(): void;
     getLineItemClass(item: string, i: number): "" | "error-mark" | "warning-mark" | "info-mark" | "note-mark";
-    getFormat(): string;
-    protected readonly Array: ArrayConstructor;
-    protected readonly console: Console;
-    onExportToPdf(): void;
+    exportValidationResults(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxFhirValidatorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NgxFhirValidatorComponent, "lib-ngx-fhir-validator", never, { "validatorTitle": { "alias": "validatorTitle"; "required": false; }; "validationResultsExpanded": { "alias": "validationResultsExpanded"; "required": false; }; "resultDetailsExpandBtnShown": { "alias": "resultDetailsExpandBtnShown"; "required": false; }; "formatResourceBtnShown": { "alias": "formatResourceBtnShown"; "required": false; }; "clearValidatorBtnShown": { "alias": "clearValidatorBtnShown"; "required": false; }; "submitBtnShown": { "alias": "submitBtnShown"; "required": false; }; "exportToPdfButtonShown": { "alias": "exportToPdfButtonShown"; "required": false; }; "submitBtnTitle": { "alias": "submitBtnTitle"; "required": false; }; "validationInputFormat": { "alias": "validationInputFormat"; "required": false; }; "maxFileSize": { "alias": "maxFileSize"; "required": false; }; "submitBtnAlignment": { "alias": "submitBtnAlignment"; "required": false; }; "cancelValidationBtnShown": { "alias": "cancelValidationBtnShown"; "required": false; }; "buttonTxtColor": { "alias": "buttonTxtColor"; "required": false; }; "buttonBackgroundColor": { "alias": "buttonBackgroundColor"; "required": false; }; }, { "onValidation": "onValidation"; "onApiError": "onApiError"; "onResourceContentChanged": "onResourceContentChanged"; "onExportToPdfEvent": "onExportToPdfEvent"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NgxFhirValidatorComponent, "lib-ngx-fhir-validator", never, { "validatorTitle": { "alias": "validatorTitle"; "required": false; }; "validationResultsExpanded": { "alias": "validationResultsExpanded"; "required": false; }; "resultDetailsExpandBtnShown": { "alias": "resultDetailsExpandBtnShown"; "required": false; }; "formatResourceBtnShown": { "alias": "formatResourceBtnShown"; "required": false; }; "clearValidatorBtnShown": { "alias": "clearValidatorBtnShown"; "required": false; }; "submitBtnShown": { "alias": "submitBtnShown"; "required": false; }; "exportResultsButtonShown": { "alias": "exportResultsButtonShown"; "required": false; }; "submitBtnTitle": { "alias": "submitBtnTitle"; "required": false; }; "validationInputFormat": { "alias": "validationInputFormat"; "required": false; }; "maxFileSize": { "alias": "maxFileSize"; "required": false; }; "submitBtnAlignment": { "alias": "submitBtnAlignment"; "required": false; }; "cancelValidationBtnShown": { "alias": "cancelValidationBtnShown"; "required": false; }; "buttonTxtColor": { "alias": "buttonTxtColor"; "required": false; }; "buttonBackgroundColor": { "alias": "buttonBackgroundColor"; "required": false; }; "exportValidationResultsBtnVisible": { "alias": "exportValidationResultsBtnVisible"; "required": false; }; "exportValidationResultsBtnName": { "alias": "exportValidationResultsBtnName"; "required": false; }; }, { "onValidation": "onValidation"; "onApiError": "onApiError"; "onResourceContentChanged": "onResourceContentChanged"; "onExportValidationResults": "onExportValidationResults"; }, never, never, false, never>;
 }
