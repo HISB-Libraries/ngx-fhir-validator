@@ -38,8 +38,8 @@ export class NgxFhirValidatorModule {
             ]
         };
     }
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.9", ngImport: i0, type: NgxFhirValidatorModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule }); }
-    static { this.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "16.2.9", ngImport: i0, type: NgxFhirValidatorModule, declarations: [NgxFhirValidatorComponent], imports: [CommonModule,
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxFhirValidatorModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule }); }
+    static { this.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "17.0.9", ngImport: i0, type: NgxFhirValidatorModule, declarations: [NgxFhirValidatorComponent], imports: [CommonModule,
             BrowserModule,
             BrowserAnimationsModule,
             MatFormFieldModule,
@@ -64,7 +64,7 @@ export class NgxFhirValidatorModule {
             MatCheckboxModule,
             MatTooltipModule,
             MatDividerModule], exports: [NgxFhirValidatorComponent] }); }
-    static { this.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "16.2.9", ngImport: i0, type: NgxFhirValidatorModule, providers: [
+    static { this.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxFhirValidatorModule, providers: [
             ValidatorConstants
         ], imports: [CommonModule,
             BrowserModule,
@@ -92,7 +92,7 @@ export class NgxFhirValidatorModule {
             MatTooltipModule,
             MatDividerModule] }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.9", ngImport: i0, type: NgxFhirValidatorModule, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxFhirValidatorModule, decorators: [{
             type: NgModule,
             args: [{
                     declarations: [
