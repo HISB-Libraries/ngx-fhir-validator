@@ -17,7 +17,7 @@ export declare class FhirValidatorService {
     isXmlString(str: string): boolean;
     beautifyJSON(str: string): string;
     beautifyXML(str: string): string;
-    validateFhirResource(fhirResource: any, resourceFormat: string): Observable<any>;
+    validateFhirResource(fhirResource: any, resourceFormat: string, ig: string): Observable<any>;
     static ɵfac: i0.ɵɵFactoryDeclaration<FhirValidatorService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<FhirValidatorService>;
 }

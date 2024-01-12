@@ -5,6 +5,7 @@ import { FhirValidatorService } from "../services/fhir-validator.service";
 import { ValidationResults } from "../modal/validation-results";
 import { ApiResponse } from "../modal/api-response";
 import { ValidatorInput } from "../modal/validator-input-format";
+import { ImplementationGuide } from "../modal/implementation-guide";
 import * as i0 from "@angular/core";
 export type SubmitButtonAlignment = 'left' | 'right';
 export declare class NgxFhirValidatorComponent {
@@ -49,6 +50,8 @@ export declare class NgxFhirValidatorComponent {
     serverErrorStatus: string;
     lines: number;
     width: number;
+    igList: ImplementationGuide[];
+    selectedIG: ImplementationGuide;
     serverTimoutDetected: boolean;
     SERVER_TIMEOUT_INTERVAL: number;
     constructor(fhirValidatorService: FhirValidatorService);
