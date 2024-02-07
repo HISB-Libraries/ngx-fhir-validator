@@ -1,4 +1,4 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, OnInit } from '@angular/core';
 import { UntypedFormControl } from "@angular/forms";
 import { MatTableDataSource } from "@angular/material/table";
 import { FhirValidatorService } from "../services/fhir-validator.service";
@@ -8,7 +8,7 @@ import { ValidatorInput } from "../modal/validator-input-format";
 import { ImplementationGuide } from "../modal/implementation-guide";
 import * as i0 from "@angular/core";
 export type SubmitButtonAlignment = 'left' | 'right';
-export declare class NgxFhirValidatorComponent {
+export declare class NgxFhirValidatorComponent implements OnInit {
     private fhirValidatorService;
     validatorTitle: string;
     validationResultsExpanded: boolean;
@@ -25,6 +25,7 @@ export declare class NgxFhirValidatorComponent {
     buttonTxtColor: string;
     buttonBackgroundColor: string;
     exportValidationResultsBtnName: string;
+    igList: ImplementationGuide[];
     onValidation: EventEmitter<ValidationResults>;
     onApiError: EventEmitter<any>;
     onResourceContentChanged: EventEmitter<any>;
@@ -50,11 +51,11 @@ export declare class NgxFhirValidatorComponent {
     serverErrorStatus: string;
     lines: number;
     width: number;
-    igList: ImplementationGuide[];
     selectedIG: ImplementationGuide;
     serverTimoutDetected: boolean;
     SERVER_TIMEOUT_INTERVAL: number;
     constructor(fhirValidatorService: FhirValidatorService);
+    ngOnInit(): void;
     formatFhirResource(): void;
     lineNumbers(): void;
     getLineNumbers(): string[];
@@ -82,5 +83,5 @@ export declare class NgxFhirValidatorComponent {
     getLineItemClass(item: string, i: number): "" | "error-mark" | "warning-mark" | "info-mark" | "note-mark";
     exportValidationResults(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxFhirValidatorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NgxFhirValidatorComponent, "lib-ngx-fhir-validator", never, { "validatorTitle": { "alias": "validatorTitle"; "required": false; }; "validationResultsExpanded": { "alias": "validationResultsExpanded"; "required": false; }; "resultDetailsExpandBtnShown": { "alias": "resultDetailsExpandBtnShown"; "required": false; }; "formatResourceBtnShown": { "alias": "formatResourceBtnShown"; "required": false; }; "clearValidatorBtnShown": { "alias": "clearValidatorBtnShown"; "required": false; }; "submitBtnShown": { "alias": "submitBtnShown"; "required": false; }; "exportResultsButtonShown": { "alias": "exportResultsButtonShown"; "required": false; }; "submitBtnTitle": { "alias": "submitBtnTitle"; "required": false; }; "validationInputFormat": { "alias": "validationInputFormat"; "required": false; }; "maxFileSize": { "alias": "maxFileSize"; "required": false; }; "submitBtnAlignment": { "alias": "submitBtnAlignment"; "required": false; }; "cancelValidationBtnShown": { "alias": "cancelValidationBtnShown"; "required": false; }; "buttonTxtColor": { "alias": "buttonTxtColor"; "required": false; }; "buttonBackgroundColor": { "alias": "buttonBackgroundColor"; "required": false; }; "exportValidationResultsBtnName": { "alias": "exportValidationResultsBtnName"; "required": false; }; }, { "onValidation": "onValidation"; "onApiError": "onApiError"; "onResourceContentChanged": "onResourceContentChanged"; "onExportValidationResults": "onExportValidationResults"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NgxFhirValidatorComponent, "lib-ngx-fhir-validator", never, { "validatorTitle": { "alias": "validatorTitle"; "required": false; }; "validationResultsExpanded": { "alias": "validationResultsExpanded"; "required": false; }; "resultDetailsExpandBtnShown": { "alias": "resultDetailsExpandBtnShown"; "required": false; }; "formatResourceBtnShown": { "alias": "formatResourceBtnShown"; "required": false; }; "clearValidatorBtnShown": { "alias": "clearValidatorBtnShown"; "required": false; }; "submitBtnShown": { "alias": "submitBtnShown"; "required": false; }; "exportResultsButtonShown": { "alias": "exportResultsButtonShown"; "required": false; }; "submitBtnTitle": { "alias": "submitBtnTitle"; "required": false; }; "validationInputFormat": { "alias": "validationInputFormat"; "required": false; }; "maxFileSize": { "alias": "maxFileSize"; "required": false; }; "submitBtnAlignment": { "alias": "submitBtnAlignment"; "required": false; }; "cancelValidationBtnShown": { "alias": "cancelValidationBtnShown"; "required": false; }; "buttonTxtColor": { "alias": "buttonTxtColor"; "required": false; }; "buttonBackgroundColor": { "alias": "buttonBackgroundColor"; "required": false; }; "exportValidationResultsBtnName": { "alias": "exportValidationResultsBtnName"; "required": false; }; "igList": { "alias": "igList"; "required": true; }; }, { "onValidation": "onValidation"; "onApiError": "onApiError"; "onResourceContentChanged": "onResourceContentChanged"; "onExportValidationResults": "onExportValidationResults"; }, never, never, false, never>;
 }
