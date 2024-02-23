@@ -258,7 +258,7 @@ class FhirValidatorService {
                 `<Parameters xmlns="http://hl7.org/fhir">
           <parameter>
             <name value="ig"/>
-            <valueString value=${ig}>
+            <valueString value="${ig}"/>
           </parameter>
           <parameter>
             <name value="format"/>
