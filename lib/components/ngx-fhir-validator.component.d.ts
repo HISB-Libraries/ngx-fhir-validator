@@ -1,5 +1,5 @@
 import { EventEmitter, OnInit } from '@angular/core';
-import { UntypedFormControl } from "@angular/forms";
+import { FormGroup, UntypedFormControl } from "@angular/forms";
 import { MatTableDataSource } from "@angular/material/table";
 import { FhirValidatorService } from "../services/fhir-validator.service";
 import { ValidationResults } from "../modal/validation-results";
@@ -25,11 +25,11 @@ export declare class NgxFhirValidatorComponent implements OnInit {
     buttonTxtColor: string;
     buttonBackgroundColor: string;
     exportValidationResultsBtnName: string;
-    igList: ImplementationGuide[];
     onValidation: EventEmitter<ValidationResults>;
     onApiError: EventEmitter<any>;
     onResourceContentChanged: EventEmitter<any>;
     onExportValidationResults: EventEmitter<any>;
+    ig: ImplementationGuide;
     inputRef: any;
     apiResponse: ApiResponse | null;
     fhirResource: string;
@@ -51,11 +51,19 @@ export declare class NgxFhirValidatorComponent implements OnInit {
     serverErrorStatus: string;
     lines: number;
     width: number;
+    igList: ImplementationGuide[];
+    igNameList: string[];
+    igVersionList: string[];
+    selectedIgName: string;
+    selectedIgVersion: string;
+    igVersionDropdownList: string[];
     selectedIG: ImplementationGuide;
     serverTimoutDetected: boolean;
     SERVER_TIMEOUT_INTERVAL: number;
+    igSelectionFg: FormGroup<{}>;
     constructor(fhirValidatorService: FhirValidatorService);
     ngOnInit(): void;
+    getIgList(): void;
     formatFhirResource(): void;
     lineNumbers(): void;
     getLineNumbers(): string[];
@@ -63,7 +71,7 @@ export declare class NgxFhirValidatorComponent implements OnInit {
     clearUI(): void;
     onClear(): void;
     onFileSelected(event: any): void;
-    validateFhirResource(fhirResource?: any, resourceFormat?: string): void;
+    validateFhirResource(fhirResource: any, resourceFormat: string): void;
     onPasteFhirResource(event: ClipboardEvent): void;
     getLineNumbersBySeverity(apiResponse: ApiResponse | null, severity: string): number[];
     scrollToElement(location: string): void;
@@ -82,6 +90,8 @@ export declare class NgxFhirValidatorComponent implements OnInit {
     clearValidationErrors(): void;
     getLineItemClass(item: string, i: number): "" | "error-mark" | "warning-mark" | "info-mark" | "note-mark";
     exportValidationResults(): void;
+    getIgVersionsList(selectedIgName: string, igList: ImplementationGuide[]): void;
+    setSelectedIg(selectedIgName: string, selectedIgVersion: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxFhirValidatorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NgxFhirValidatorComponent, "lib-ngx-fhir-validator", never, { "validatorTitle": { "alias": "validatorTitle"; "required": false; }; "validationResultsExpanded": { "alias": "validationResultsExpanded"; "required": false; }; "resultDetailsExpandBtnShown": { "alias": "resultDetailsExpandBtnShown"; "required": false; }; "formatResourceBtnShown": { "alias": "formatResourceBtnShown"; "required": false; }; "clearValidatorBtnShown": { "alias": "clearValidatorBtnShown"; "required": false; }; "submitBtnShown": { "alias": "submitBtnShown"; "required": false; }; "exportResultsButtonShown": { "alias": "exportResultsButtonShown"; "required": false; }; "submitBtnTitle": { "alias": "submitBtnTitle"; "required": false; }; "validationInputFormat": { "alias": "validationInputFormat"; "required": false; }; "maxFileSize": { "alias": "maxFileSize"; "required": false; }; "submitBtnAlignment": { "alias": "submitBtnAlignment"; "required": false; }; "cancelValidationBtnShown": { "alias": "cancelValidationBtnShown"; "required": false; }; "buttonTxtColor": { "alias": "buttonTxtColor"; "required": false; }; "buttonBackgroundColor": { "alias": "buttonBackgroundColor"; "required": false; }; "exportValidationResultsBtnName": { "alias": "exportValidationResultsBtnName"; "required": false; }; "igList": { "alias": "igList"; "required": true; }; }, { "onValidation": "onValidation"; "onApiError": "onApiError"; "onResourceContentChanged": "onResourceContentChanged"; "onExportValidationResults": "onExportValidationResults"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NgxFhirValidatorComponent, "lib-ngx-fhir-validator", never, { "validatorTitle": { "alias": "validatorTitle"; "required": false; }; "validationResultsExpanded": { "alias": "validationResultsExpanded"; "required": false; }; "resultDetailsExpandBtnShown": { "alias": "resultDetailsExpandBtnShown"; "required": false; }; "formatResourceBtnShown": { "alias": "formatResourceBtnShown"; "required": false; }; "clearValidatorBtnShown": { "alias": "clearValidatorBtnShown"; "required": false; }; "submitBtnShown": { "alias": "submitBtnShown"; "required": false; }; "exportResultsButtonShown": { "alias": "exportResultsButtonShown"; "required": false; }; "submitBtnTitle": { "alias": "submitBtnTitle"; "required": false; }; "validationInputFormat": { "alias": "validationInputFormat"; "required": false; }; "maxFileSize": { "alias": "maxFileSize"; "required": false; }; "submitBtnAlignment": { "alias": "submitBtnAlignment"; "required": false; }; "cancelValidationBtnShown": { "alias": "cancelValidationBtnShown"; "required": false; }; "buttonTxtColor": { "alias": "buttonTxtColor"; "required": false; }; "buttonBackgroundColor": { "alias": "buttonBackgroundColor"; "required": false; }; "exportValidationResultsBtnName": { "alias": "exportValidationResultsBtnName"; "required": false; }; "ig": { "alias": "ig"; "required": false; }; }, { "onValidation": "onValidation"; "onApiError": "onApiError"; "onResourceContentChanged": "onResourceContentChanged"; "onExportValidationResults": "onExportValidationResults"; }, never, never, false, never>;
 }
