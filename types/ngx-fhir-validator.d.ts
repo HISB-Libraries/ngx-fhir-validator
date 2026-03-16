@@ -1,5 +1,5 @@
-import * as i0 from '@angular/core';
-import { OnInit, EventEmitter, ModuleWithProviders } from '@angular/core';
+import * as _angular_core from '@angular/core';
+import { OnInit, ModuleWithProviders } from '@angular/core';
 import * as i8 from '@angular/forms';
 import { UntypedFormControl, FormGroup } from '@angular/forms';
 import * as i12 from '@angular/material/table';
@@ -33,8 +33,8 @@ declare class EnvironmentHandlerService {
     private serverBaseUrl;
     constructor(serverBaseUrl: any);
     getFhirServerBaseURL(): string;
-    static ɵfac: i0.ɵɵFactoryDeclaration<EnvironmentHandlerService, never>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<EnvironmentHandlerService>;
+    static ɵfac: _angular_core.ɵɵFactoryDeclaration<EnvironmentHandlerService, never>;
+    static ɵprov: _angular_core.ɵɵInjectableDeclaration<EnvironmentHandlerService>;
 }
 
 interface ImplementationGuide {
@@ -59,8 +59,8 @@ declare class FhirValidatorService {
     beautifyXML(str: string): string;
     validateFhirResource(fhirResource: any, resourceFormat: string, ig: string): Observable<any>;
     getIgList(): Observable<Object>;
-    static ɵfac: i0.ɵɵFactoryDeclaration<FhirValidatorService, never>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<FhirValidatorService>;
+    static ɵfac: _angular_core.ɵɵFactoryDeclaration<FhirValidatorService, never>;
+    static ɵprov: _angular_core.ɵɵInjectableDeclaration<FhirValidatorService>;
 }
 
 interface ValidationResults {
@@ -93,27 +93,28 @@ interface ValidatorInput {
 type SubmitButtonAlignment = 'left' | 'right';
 declare class NgxFhirValidatorComponent implements OnInit {
     private fhirValidatorService;
-    validatorTitle: string;
-    validationResultsExpanded: boolean;
-    resultDetailsExpandBtnShown: boolean;
-    formatResourceBtnShown: boolean;
-    clearValidatorBtnShown: boolean;
-    submitBtnShown: boolean;
-    exportResultsButtonShown: boolean;
-    submitBtnTitle: string;
-    validationInputFormat: ValidatorInput;
-    maxFileSize: number;
-    submitBtnAlignment: SubmitButtonAlignment;
-    cancelValidationBtnShown: boolean;
-    buttonTxtColor: string;
-    buttonBackgroundColor: string;
-    exportValidationResultsBtnName: string;
-    onValidation: EventEmitter<ValidationResults>;
-    onApiError: EventEmitter<any>;
-    onResourceContentChanged: EventEmitter<any>;
-    onExportValidationResults: EventEmitter<any>;
-    ig: ImplementationGuide;
+    validatorTitle: _angular_core.InputSignal<string>;
+    validationResultsExpanded: _angular_core.InputSignal<boolean>;
+    resultDetailsExpandBtnShown: _angular_core.InputSignal<boolean>;
+    formatResourceBtnShown: _angular_core.InputSignal<boolean>;
+    clearValidatorBtnShown: _angular_core.InputSignal<boolean>;
+    submitBtnShown: _angular_core.InputSignal<boolean>;
+    exportResultsButtonShown: _angular_core.InputSignal<boolean>;
+    submitBtnTitle: _angular_core.InputSignal<string>;
+    validationInputFormat: _angular_core.InputSignal<ValidatorInput>;
+    maxFileSize: _angular_core.InputSignal<number>;
+    submitBtnAlignment: _angular_core.InputSignal<SubmitButtonAlignment>;
+    cancelValidationBtnShown: _angular_core.InputSignal<boolean>;
+    buttonTxtColor: _angular_core.InputSignal<string>;
+    buttonBackgroundColor: _angular_core.InputSignal<string>;
+    exportValidationResultsBtnName: _angular_core.InputSignal<string>;
+    ig: _angular_core.InputSignal<ImplementationGuide>;
+    onValidation: _angular_core.OutputEmitterRef<ValidationResults>;
+    onApiError: _angular_core.OutputEmitterRef<any>;
+    onResourceContentChanged: _angular_core.OutputEmitterRef<any>;
+    onExportValidationResults: _angular_core.OutputEmitterRef<any>;
     inputRef: any;
+    resultDetailsExpanded: boolean;
     apiResponse: ApiResponse | null;
     fhirResource: string;
     resourceFormat: string;
@@ -134,9 +135,9 @@ declare class NgxFhirValidatorComponent implements OnInit {
     serverErrorStatus: string;
     lines: number;
     width: number;
-    igList: ImplementationGuide[];
-    igNameList: string[];
-    igVersionList: string[];
+    igList: _angular_core.WritableSignal<ImplementationGuide[]>;
+    igNameList: _angular_core.Signal<string[]>;
+    igVersionList: _angular_core.Signal<string[]>;
     selectedIgName: string;
     selectedIgVersion: string;
     igVersionDropdownList: string[];
@@ -175,15 +176,15 @@ declare class NgxFhirValidatorComponent implements OnInit {
     exportValidationResults(): void;
     setIgVersionControl(selectedIgName: string, igList: ImplementationGuide[]): void;
     setSelectedIg(selectedIgName: string, selectedIgVersion: string): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<NgxFhirValidatorComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NgxFhirValidatorComponent, "lib-ngx-fhir-validator", never, { "validatorTitle": { "alias": "validatorTitle"; "required": false; }; "validationResultsExpanded": { "alias": "validationResultsExpanded"; "required": false; }; "resultDetailsExpandBtnShown": { "alias": "resultDetailsExpandBtnShown"; "required": false; }; "formatResourceBtnShown": { "alias": "formatResourceBtnShown"; "required": false; }; "clearValidatorBtnShown": { "alias": "clearValidatorBtnShown"; "required": false; }; "submitBtnShown": { "alias": "submitBtnShown"; "required": false; }; "exportResultsButtonShown": { "alias": "exportResultsButtonShown"; "required": false; }; "submitBtnTitle": { "alias": "submitBtnTitle"; "required": false; }; "validationInputFormat": { "alias": "validationInputFormat"; "required": false; }; "maxFileSize": { "alias": "maxFileSize"; "required": false; }; "submitBtnAlignment": { "alias": "submitBtnAlignment"; "required": false; }; "cancelValidationBtnShown": { "alias": "cancelValidationBtnShown"; "required": false; }; "buttonTxtColor": { "alias": "buttonTxtColor"; "required": false; }; "buttonBackgroundColor": { "alias": "buttonBackgroundColor"; "required": false; }; "exportValidationResultsBtnName": { "alias": "exportValidationResultsBtnName"; "required": false; }; "ig": { "alias": "ig"; "required": false; }; }, { "onValidation": "onValidation"; "onApiError": "onApiError"; "onResourceContentChanged": "onResourceContentChanged"; "onExportValidationResults": "onExportValidationResults"; }, never, never, false, never>;
+    static ɵfac: _angular_core.ɵɵFactoryDeclaration<NgxFhirValidatorComponent, never>;
+    static ɵcmp: _angular_core.ɵɵComponentDeclaration<NgxFhirValidatorComponent, "lib-ngx-fhir-validator", never, { "validatorTitle": { "alias": "validatorTitle"; "required": false; "isSignal": true; }; "validationResultsExpanded": { "alias": "validationResultsExpanded"; "required": false; "isSignal": true; }; "resultDetailsExpandBtnShown": { "alias": "resultDetailsExpandBtnShown"; "required": false; "isSignal": true; }; "formatResourceBtnShown": { "alias": "formatResourceBtnShown"; "required": false; "isSignal": true; }; "clearValidatorBtnShown": { "alias": "clearValidatorBtnShown"; "required": false; "isSignal": true; }; "submitBtnShown": { "alias": "submitBtnShown"; "required": false; "isSignal": true; }; "exportResultsButtonShown": { "alias": "exportResultsButtonShown"; "required": false; "isSignal": true; }; "submitBtnTitle": { "alias": "submitBtnTitle"; "required": false; "isSignal": true; }; "validationInputFormat": { "alias": "validationInputFormat"; "required": false; "isSignal": true; }; "maxFileSize": { "alias": "maxFileSize"; "required": false; "isSignal": true; }; "submitBtnAlignment": { "alias": "submitBtnAlignment"; "required": false; "isSignal": true; }; "cancelValidationBtnShown": { "alias": "cancelValidationBtnShown"; "required": false; "isSignal": true; }; "buttonTxtColor": { "alias": "buttonTxtColor"; "required": false; "isSignal": true; }; "buttonBackgroundColor": { "alias": "buttonBackgroundColor"; "required": false; "isSignal": true; }; "exportValidationResultsBtnName": { "alias": "exportValidationResultsBtnName"; "required": false; "isSignal": true; }; "ig": { "alias": "ig"; "required": false; "isSignal": true; }; }, { "onValidation": "onValidation"; "onApiError": "onApiError"; "onResourceContentChanged": "onResourceContentChanged"; "onExportValidationResults": "onExportValidationResults"; }, never, never, false, never>;
 }
 
 declare class NgxFhirValidatorModule {
     static forRoot(serverBaseUrl: string): ModuleWithProviders<NgxFhirValidatorModule>;
-    static ɵfac: i0.ɵɵFactoryDeclaration<NgxFhirValidatorModule, never>;
-    static ɵmod: i0.ɵɵNgModuleDeclaration<NgxFhirValidatorModule, [typeof NgxFhirValidatorComponent], [typeof i2.CommonModule, typeof i3.BrowserModule, typeof i4.BrowserAnimationsModule, typeof i5.MatFormFieldModule, typeof i6.MatInputModule, typeof i7.MatButtonModule, typeof i8.ReactiveFormsModule, typeof i9.MatIconModule, typeof i10.MatSidenavModule, typeof i11.MatToolbarModule, typeof i12.MatTableModule, typeof i13.MatPaginatorModule, typeof i14.MatProgressSpinnerModule, typeof i15.MatSortModule, typeof i16.MatRadioModule, typeof i8.FormsModule, typeof i17.MatCardModule, typeof i18.MatSnackBarModule, typeof i19.MatSelectModule, typeof i20.MatButtonToggleModule, typeof i21.MatChipsModule, typeof i22.MatCheckboxModule, typeof i23.MatTooltipModule, typeof i24.MatDividerModule], [typeof NgxFhirValidatorComponent]>;
-    static ɵinj: i0.ɵɵInjectorDeclaration<NgxFhirValidatorModule>;
+    static ɵfac: _angular_core.ɵɵFactoryDeclaration<NgxFhirValidatorModule, never>;
+    static ɵmod: _angular_core.ɵɵNgModuleDeclaration<NgxFhirValidatorModule, [typeof NgxFhirValidatorComponent], [typeof i2.CommonModule, typeof i3.BrowserModule, typeof i4.BrowserAnimationsModule, typeof i5.MatFormFieldModule, typeof i6.MatInputModule, typeof i7.MatButtonModule, typeof i8.ReactiveFormsModule, typeof i9.MatIconModule, typeof i10.MatSidenavModule, typeof i11.MatToolbarModule, typeof i12.MatTableModule, typeof i13.MatPaginatorModule, typeof i14.MatProgressSpinnerModule, typeof i15.MatSortModule, typeof i16.MatRadioModule, typeof i8.FormsModule, typeof i17.MatCardModule, typeof i18.MatSnackBarModule, typeof i19.MatSelectModule, typeof i20.MatButtonToggleModule, typeof i21.MatChipsModule, typeof i22.MatCheckboxModule, typeof i23.MatTooltipModule, typeof i24.MatDividerModule], [typeof NgxFhirValidatorComponent]>;
+    static ɵinj: _angular_core.ɵɵInjectorDeclaration<NgxFhirValidatorModule>;
 }
 
 export { NgxFhirValidatorComponent, NgxFhirValidatorModule };
