@@ -1,5 +1,5 @@
 import * as _angular_core from '@angular/core';
-import { OnInit, ModuleWithProviders } from '@angular/core';
+import { OnInit, ChangeDetectorRef, ModuleWithProviders } from '@angular/core';
 import * as i8 from '@angular/forms';
 import { UntypedFormControl, FormGroup } from '@angular/forms';
 import * as i12 from '@angular/material/table';
@@ -93,6 +93,7 @@ interface ValidatorInput {
 type SubmitButtonAlignment = 'left' | 'right';
 declare class NgxFhirValidatorComponent implements OnInit {
     private fhirValidatorService;
+    private cdr;
     validatorTitle: _angular_core.InputSignal<string>;
     validationResultsExpanded: _angular_core.InputSignal<boolean>;
     resultDetailsExpandBtnShown: _angular_core.InputSignal<boolean>;
@@ -145,7 +146,7 @@ declare class NgxFhirValidatorComponent implements OnInit {
     serverTimoutDetected: boolean;
     SERVER_TIMEOUT_INTERVAL: number;
     igSelectionFg: FormGroup<{}>;
-    constructor(fhirValidatorService: FhirValidatorService);
+    constructor(fhirValidatorService: FhirValidatorService, cdr: ChangeDetectorRef);
     ngOnInit(): void;
     getIgList(): void;
     formatFhirResource(): void;
