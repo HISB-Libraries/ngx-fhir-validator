@@ -431,6 +431,7 @@ class NgxFhirValidatorComponent {
         else {
             this.fhirValidatorService.showErrorMessage("Unable to open the file.");
         }
+        this.cdr.detectChanges();
     }
     validateFhirResource(fhirResource, resourceFormat) {
         // Set the stage for the validation. Reset variables to default values.
@@ -574,8 +575,6 @@ class NgxFhirValidatorComponent {
             if (this.isLoading) {
                 this.isLoading = false;
                 this.serverTimoutDetected = true;
-                // Trigger change detection to update the view
-                this.cdr.detectChanges();
             }
         }, this.SERVER_TIMEOUT_INTERVAL);
     }
