@@ -422,6 +422,8 @@ class NgxFhirValidatorComponent {
                     this.fhirResource = reader.result;
                     this.onResourceContentChanged.emit(this.fhirResource);
                     this.formatFhirResource();
+                    // Trigger change detection to update the view
+                    this.cdr.detectChanges();
                 };
                 reader.onerror = () => {
                     this.fhirValidatorService.showErrorMessage("Unable to open the file.");
@@ -431,7 +433,6 @@ class NgxFhirValidatorComponent {
         else {
             this.fhirValidatorService.showErrorMessage("Unable to open the file.");
         }
-        this.cdr.detectChanges();
     }
     validateFhirResource(fhirResource, resourceFormat) {
         // Set the stage for the validation. Reset variables to default values.
