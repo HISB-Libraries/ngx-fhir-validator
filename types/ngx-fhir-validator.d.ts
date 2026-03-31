@@ -1,5 +1,5 @@
 import * as _angular_core from '@angular/core';
-import { OnInit, ChangeDetectorRef, ModuleWithProviders } from '@angular/core';
+import { OnInit, ModuleWithProviders } from '@angular/core';
 import * as i8 from '@angular/forms';
 import { UntypedFormControl, FormGroup } from '@angular/forms';
 import * as i12 from '@angular/material/table';
@@ -93,7 +93,6 @@ interface ValidatorInput {
 type SubmitButtonAlignment = 'left' | 'right';
 declare class NgxFhirValidatorComponent implements OnInit {
     private fhirValidatorService;
-    private cdr;
     validatorTitle: _angular_core.InputSignal<string>;
     validationResultsExpanded: _angular_core.InputSignal<boolean>;
     resultDetailsExpandBtnShown: _angular_core.InputSignal<boolean>;
@@ -115,8 +114,7 @@ declare class NgxFhirValidatorComponent implements OnInit {
     onResourceContentChanged: _angular_core.OutputEmitterRef<any>;
     onExportValidationResults: _angular_core.OutputEmitterRef<any>;
     inputRef: any;
-    resultDetailsExpanded: boolean;
-    apiResponse: ApiResponse | null;
+    apiResponse: _angular_core.WritableSignal<ApiResponse>;
     fhirResource: string;
     resourceFormat: string;
     fileName: string;
@@ -137,16 +135,17 @@ declare class NgxFhirValidatorComponent implements OnInit {
     lines: number;
     width: number;
     igList: _angular_core.WritableSignal<ImplementationGuide[]>;
-    igNameList: _angular_core.Signal<string[]>;
-    igVersionList: _angular_core.Signal<string[]>;
+    igNameList: string[];
+    igVersionList: string[];
     selectedIgName: string;
     selectedIgVersion: string;
     igVersionDropdownList: string[];
     selectedIG: ImplementationGuide;
+    localResultDetailsExpanded: boolean;
     serverTimoutDetected: boolean;
     SERVER_TIMEOUT_INTERVAL: number;
     igSelectionFg: FormGroup<{}>;
-    constructor(fhirValidatorService: FhirValidatorService, cdr: ChangeDetectorRef);
+    constructor(fhirValidatorService: FhirValidatorService);
     ngOnInit(): void;
     getIgList(): void;
     formatFhirResource(): void;
